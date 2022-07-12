@@ -1,0 +1,45 @@
+@use "../utils" as u;
+
+.heroWrapper {
+  position: relative;
+
+  .heroRightCircle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: -10;
+    height: 76%;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    & > :not(:last-child) {
+      margin-right: 3vw;
+    }
+
+    main {
+      flex: 1;
+      max-width: u.rem(641);
+
+      .icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & > :not(:last-child) {
+          margin-right: u.rem(30);
+        }
+      }
+    }
+
+    aside {
+      flex: 1;
+      // max-width: u.rem(641);
+    }
+  }
+}

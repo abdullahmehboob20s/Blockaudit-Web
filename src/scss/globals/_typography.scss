@@ -55,11 +55,7 @@
   --fs-106px: #{u.rem(106)};
   --fs-108px: #{u.rem(108)};
   --fs-110px: #{u.rem(110)};
-
-  --fs-146px: #{u.rem(146)};
-  --fs-172px: #{u.rem(172)};
-  --fs-168px: #{u.rem(168)};
-  --fs-144px: #{u.rem(144)};
+  --fs-150px: #{u.rem(150)};
 }
 
 /* FONT-SIZES */
@@ -226,17 +222,8 @@
   font-size: var(--fs-110px);
 }
 
-.fs-146px {
-  font-size: var(--fs-146px);
-}
-.fs-172px {
-  font-size: var(--fs-172px);
-}
-.fs-168px {
-  font-size: var(--fs-168px);
-}
-.fs-144px {
-  font-size: var(--fs-144px);
+.fs-150px {
+  font-size: var(--fs-150px);
 }
 
 /*  */
