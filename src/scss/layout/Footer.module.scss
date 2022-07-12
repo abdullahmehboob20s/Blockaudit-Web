@@ -1,0 +1,221 @@
+@use "../utils" as u;
+
+.wrapper {
+  background-color: black;
+  position: relative;
+
+  .emailIcon {
+    width: 8%;
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+    border-top-left-radius: u.rem(11);
+    border-bottom-left-radius: u.rem(11);
+    padding: 0.7%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    z-index: 10;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      background: linear-gradient(
+        270deg,
+        #d09756 0%,
+        rgba(208, 151, 86, 0.369792) 41.95%,
+        rgba(208, 151, 86, 0) 75.27%
+      );
+      transform: rotate(-180deg);
+    }
+
+    img {
+      width: 58%;
+    }
+
+    @include u.breakpoint(large) {
+      width: u.rem(90);
+      bottom: unset;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: u.rem(8);
+    }
+  }
+
+  .footer {
+    padding: u.rem(100) 0;
+    padding-bottom: 0;
+
+    .line {
+      width: 100%;
+      height: u.rem(5);
+      background: linear-gradient(
+        90deg,
+        #d09756 0%,
+        #3d1b0a 51.35%,
+        #d09756 100%
+      );
+    }
+
+    .eggBoxOuter {
+      display: none;
+    }
+
+    .footerColumn {
+      display: flex;
+      justify-content: space-between;
+
+      .eggBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+          width: u.rem(140);
+        }
+      }
+
+      .desc {
+        flex: 1;
+
+        p {
+          max-width: 24em;
+        }
+      }
+
+      .box {
+        // border: 2px solid red;
+        flex: 0.5;
+      }
+
+      & > :not(:last-child) {
+        margin-right: u.rem(60);
+      }
+    }
+
+    .footerLinks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .SocialLinks {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        padding: u.rem(14) 0;
+        // border: 1px solid red;
+
+        a {
+          display: flex;
+        }
+
+        & > :not(:last-child) {
+          margin-right: u.rem(30);
+        }
+
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+        }
+
+        &::after {
+          background: url("https://ik.imagekit.io/l4k8brcjb/images/input-border-img-top.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1657281031702");
+          background-position: top center;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          top: -6px;
+        }
+        &::before {
+          background: url("https://ik.imagekit.io/l4k8brcjb/images/input-border-img-bottom.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1657281029070");
+          background-position: bottom center;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          top: 6px;
+        }
+      }
+      & > :not(:last-child) {
+        margin-right: u.rem(40);
+      }
+    }
+
+    .footerCopyright {
+      padding: u.rem(18) 0;
+      border-top: 2px solid #525252;
+      width: 90%;
+    }
+
+    @include u.breakpoint(xLarge) {
+      .eggBoxOuter {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: u.rem(120);
+        }
+      }
+
+      .footerColumn {
+        .eggBox {
+          display: none;
+        }
+      }
+
+      .footerCopyright {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @include u.breakpoint(large) {
+      .footerColumn {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 3rem;
+        max-width: u.rem(560);
+        margin: 0 auto;
+
+        & > :not(:last-child) {
+          margin-right: u.rem(0);
+        }
+      }
+    }
+    @include u.breakpoint(medium) {
+      .footerLinks {
+        flex-direction: column;
+
+        & > :not(:last-child) {
+          margin-right: u.rem(0);
+          margin-bottom: u.rem(22);
+        }
+
+        .SocialLinks {
+          & > :not(:last-child) {
+            margin-right: u.rem(16);
+          }
+        }
+      }
+    }
+    @include u.breakpoint(small) {
+      .footerColumn {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+  }
+}

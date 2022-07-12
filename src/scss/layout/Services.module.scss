@@ -1,0 +1,102 @@
+@use "../utils" as u;
+
+.wrapper {
+  position: relative;
+
+  .upperBlob {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+    z-index: -40;
+  }
+  .leftRedBlob {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    z-index: -40;
+  }
+
+  .shapedButton {
+    padding: u.rem(14) u.rem(40);
+
+    @media (max-width: 43.75em) {
+      padding: u.rem(8) u.rem(26);
+    }
+  }
+
+  .titleWrapper {
+    position: relative;
+
+    .titleStripe {
+      position: absolute;
+      top: 80%;
+      left: 0;
+      width: 100%;
+      z-index: -40;
+      transform: translateY(-50%);
+    }
+  }
+
+  .chart {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin-bottom: 2vw;
+
+    @media (min-width: u.em(2400)) {
+      margin-bottom: 40px;
+    }
+
+    .cardsStripe {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      width: 20%;
+      height: 100% !important;
+      transform: translate(-50%, -50%);
+      z-index: -20;
+    }
+
+    .cardBlob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -40;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .cardsLeft {
+      width: 40%;
+      display: grid;
+      gap: u.rem(26);
+    }
+    .cardsRight {
+      width: 40%;
+      display: grid;
+      gap: u.rem(26);
+    }
+  }
+
+  @include u.breakpoint(large) {
+    .chart {
+      .cardsLeft {
+        gap: u.rem(22);
+      }
+      .cardsRight {
+        gap: u.rem(22);
+      }
+    }
+  }
+  @include u.breakpoint(small) {
+    .chart {
+      .cardsLeft {
+        gap: u.rem(18);
+      }
+      .cardsRight {
+        gap: u.rem(18);
+      }
+    }
+  }
+}

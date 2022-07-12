@@ -1,0 +1,173 @@
+@use "../utils" as u;
+
+.card {
+  display: flex;
+  position: relative;
+  z-index: 4;
+  height: 7vw;
+
+  .cardBorder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100%;
+    object-fit: 100% 100%;
+    z-index: -1;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .leftSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-size: 1vw;
+      margin-bottom: 0.6vw;
+    }
+
+    p {
+      font-size: 0.8vw;
+    }
+  }
+
+  .rightSection {
+    width: 7vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    // box-shadow:  ;
+    filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.8)) !important;
+
+    .cardIconBG {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      object-fit: 100% 100%;
+    }
+
+    img {
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+
+  &.left {
+    padding-right: 4vw;
+    padding-left: 4vw;
+
+    .leftSection {
+      text-align: right;
+      margin-right: u.rem(30);
+    }
+
+    .rightSection {
+      left: 90%;
+      bottom: 1vw;
+      height: 80%;
+      z-index: 10;
+    }
+  }
+
+  &.right {
+    padding-right: 4vw;
+    padding-left: 4vw;
+    flex-direction: row-reverse;
+
+    .leftSection {
+      text-align: left;
+      justify-content: flex-start;
+      margin-left: u.rem(30);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .rightSection {
+      box-shadow: none;
+    }
+
+    .rightSection {
+      right: 90%;
+      bottom: 1vw;
+      height: 80%;
+      z-index: 10;
+    }
+  }
+
+  @media (min-width: u.em(2400)) {
+    height: u.rem(173);
+
+    .leftSection {
+      h1 {
+        font-size: 24px;
+        margin-bottom: 14px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+
+    .rightSection {
+      width: u.rem(174);
+    }
+
+    &.left {
+      padding-right: 100px;
+      padding-left: 100px;
+
+      .rightSection {
+        bottom: 20px;
+      }
+    }
+
+    &.right {
+      padding-right: 100px;
+      padding-left: 100px;
+
+      .rightSection {
+        bottom: 20px;
+      }
+    }
+  }
+
+  @include u.breakpoint(large) {
+    &.left {
+      padding-right: 2vw;
+      padding-left: 2vw;
+    }
+    &.right {
+      padding-right: 2vw;
+      padding-left: 2vw;
+    }
+  }
+  @include u.breakpoint(medium) {
+    &.left {
+      padding-right: 1vw;
+      padding-left: 3vw;
+    }
+    &.right {
+      padding-right: 3vw;
+      padding-left: 1vw;
+    }
+  }
+
+  @include u.breakpoint(small) {
+  }
+  @include u.breakpoint(xsmall) {
+    &.left {
+      padding-right: 0vw;
+    }
+    &.right {
+      padding-left: 0vw;
+    }
+  }
+}
