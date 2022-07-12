@@ -1,0 +1,101 @@
+@use "../utils" as u;
+
+.wrapper {
+  header {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 20%;
+      height: u.rem(15);
+      background: linear-gradient(90deg, #ff1616 0%, rgba(92, 21, 19, 0) 100%);
+      z-index: -20;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 20%;
+      height: u.rem(15);
+      background: linear-gradient(90deg, #ff1616 0%, rgba(92, 21, 19, 0) 100%);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      z-index: -20;
+    }
+  }
+
+  main {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8rem 6rem;
+
+    .line {
+      position: absolute;
+    }
+
+    $linePosition: 30%;
+
+    .line:nth-child(1) {
+      width: 100%;
+      height: u.rem(5);
+      left: 0%;
+      top: $linePosition;
+
+      background: linear-gradient(
+        90deg,
+        rgba(255, 22, 22, 0) 0%,
+        #ff1616 35.73%,
+        #ff1616 75.31%,
+        rgba(255, 22, 22, 0) 100%
+      );
+      border-radius: u.rem(42);
+    }
+    .line:nth-child(2) {
+      width: 100%;
+      height: u.rem(5);
+      left: 0%;
+      bottom: $linePosition;
+
+      background: linear-gradient(
+        90deg,
+        rgba(255, 22, 22, 0) 0%,
+        #ff1616 35.73%,
+        #ff1616 75.31%,
+        rgba(255, 22, 22, 0) 100%
+      );
+      border-radius: u.rem(42);
+    }
+
+    .line:nth-child(3) {
+      width: u.rem(5);
+      height: 100%;
+      top: 0%;
+      left: calc(#{$linePosition} + 1.8%);
+      background: linear-gradient(
+        rgba(255, 22, 22, 0) 0%,
+        #ff1616 35.73%,
+        #ff1616 75.31%,
+        rgba(255, 22, 22, 0) 100%
+      );
+      border-radius: u.rem(42);
+    }
+
+    .line:nth-child(4) {
+      width: u.rem(5);
+      height: 100%;
+      top: 0%;
+      right: calc(#{$linePosition} + 1.8%);
+      background: linear-gradient(
+        rgba(255, 22, 22, 0) 0%,
+        #ff1616 35.73%,
+        #ff1616 75.31%,
+        rgba(255, 22, 22, 0) 100%
+      );
+      border-radius: u.rem(42);
+    }
+  }
+}
