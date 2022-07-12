@@ -33,7 +33,7 @@ function Security() {
 
             <button className={`${styles.github_button} mb-45px pointer`}>
               <p className="fs-34px white weight-6 lh-1">GitHub</p>{" "}
-              <FaGithub color="white" size={40} />
+              <FaGithub color="white" />
             </button>
 
             <div className={styles.cards}>

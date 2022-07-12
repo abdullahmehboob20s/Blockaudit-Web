@@ -5,12 +5,12 @@ import icon1 from "assets/images/icons/audit.svg";
 import icon2 from "assets/images/icons/escrow.svg";
 import icon3 from "assets/images/icons/kyc.svg";
 import editor from "assets/images/editor.png";
-import heroRightCircle from "assets/images/hero-right-circles.svg";
+import concentricCircle from "assets/images/concentric-circle.png";
 
 function Hero() {
   return (
     <div className={styles.heroWrapper}>
-      <img src={heroRightCircle} className={styles.heroRightCircle} alt="" />
+      <img src={concentricCircle} className={styles.concentricCircle} alt="" />
 
       <div className="container-wrapper">
         <div className={styles.hero}>
@@ -19,7 +19,10 @@ function Hero() {
               Audit <span className="red">Service</span> For
             </h2>
             <h1 className="fs-150px white weight-8 lh-1 mb-15px">DeFi.</h1>
-            <p className="fs-24px white weight-2 lh-1_4 opacity-0_6 mb-30px">
+            <p
+              className="fs-24px white weight-2 lh-1_4 opacity-0_6 mb-30px"
+              style={{ maxWidth: "22em" }}
+            >
               Audit, KYC documents, Escrow And Development, All at one place
             </p>
 

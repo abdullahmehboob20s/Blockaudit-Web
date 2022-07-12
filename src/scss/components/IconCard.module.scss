@@ -25,4 +25,18 @@
     height: 50%;
     width: 66%;
   }
+
+  @include u.breakpoint(twoxLarge) {
+    width: u.rem(100);
+    height: u.rem(139);
+
+    img {
+      height: 38%;
+      width: 54%;
+    }
+  }
+  @include u.breakpoint(large) {
+    width: u.rem(90);
+    height: u.rem(100);
+  }
 }

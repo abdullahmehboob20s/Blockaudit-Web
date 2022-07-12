@@ -43,7 +43,7 @@
       width: 100%;
       height: u.rem(5);
       left: 0%;
-      top: $linePosition;
+      top: 30%;
 
       background: linear-gradient(
         90deg,
@@ -58,7 +58,7 @@
       width: 100%;
       height: u.rem(5);
       left: 0%;
-      bottom: $linePosition;
+      top: 67%;
 
       background: linear-gradient(
         90deg,
@@ -69,7 +69,6 @@
       );
       border-radius: u.rem(42);
     }
-
     .line:nth-child(3) {
       width: u.rem(5);
       height: 100%;
@@ -83,7 +82,6 @@
       );
       border-radius: u.rem(42);
     }
-
     .line:nth-child(4) {
       width: u.rem(5);
       height: 100%;
@@ -96,6 +94,15 @@
         rgba(255, 22, 22, 0) 100%
       );
       border-radius: u.rem(42);
+    }
+
+    @include u.breakpoint(twoxLarge) {
+      gap: 2rem 6rem;
+
+      .line:nth-child(2) {
+        height: u.rem(5);
+        top: 65%;
+      }
     }
   }
 }

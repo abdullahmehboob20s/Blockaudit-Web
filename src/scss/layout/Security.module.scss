@@ -20,6 +20,7 @@
   }
 
   .cards {
+    width: 100%;
     display: flex;
     align-items: center;
 
@@ -39,6 +40,31 @@
 
     & > :not(:last-child) {
       margin-right: u.rem(20);
+    }
+
+    svg {
+      font-size: u.rem(40);
+    }
+  }
+
+  @include u.breakpoint(twoxLarge) {
+    .cards {
+      & > :not(:last-child) {
+        margin-right: u.rem(20);
+      }
+    }
+
+    .github_button {
+      padding: u.rem(12) u.rem(30);
+      border-radius: u.rem(10);
+
+      & > :not(:last-child) {
+        margin-right: u.rem(14);
+      }
+
+      svg {
+        font-size: u.rem(30);
+      }
     }
   }
 

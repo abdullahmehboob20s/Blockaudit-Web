@@ -5,11 +5,18 @@
   flex-direction: column;
   align-items: center;
   //   padding: 1rem 2rem;
+  // border: 2px solid red;
 
   img {
-    $squareSize: 30%;
+    --squareSize: 30%;
 
-    width: $squareSize;
-    height: $squareSize;
+    width: var(--squareSize);
+    height: var(--squareSize);
+  }
+
+  @include u.breakpoint(twoxLarge) {
+    img {
+      --squareSize: 26%;
+    }
   }
 }

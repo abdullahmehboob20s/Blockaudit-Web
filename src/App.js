@@ -1,6 +1,7 @@
 import About from "layouts/About";
 import Business from "layouts/Business";
 import Companies from "layouts/Companies";
+import Contact from "layouts/Contact";
 import Hero from "layouts/Hero";
 import Navbar from "layouts/Navbar";
 import Security from "layouts/Security";
@@ -12,7 +13,7 @@ function App() {
       <div className="mb-200px">
         <Hero />
       </div>
-      <div className="mb-300px">
+      {/* <div className="mb-300px">
         <Companies />
       </div>
       <div className="mb-200px">
@@ -21,9 +22,8 @@ function App() {
       <div>
         <About />
       </div>
-      <div className="mb-200px">
-        <Business />
-      </div>
+      <Business />
+      <Contact /> */}
     </div>
   );
 }

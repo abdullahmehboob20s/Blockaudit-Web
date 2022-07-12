@@ -1,14 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "scss/layout/Navbar.module.scss";
 import logo from "assets/images/logo.png";
+import OutsideClickDetector from "hooks/OutsideClickDetector";
+import { FiMenu } from "react-icons/fi";
+import { IoClose } from "react-icons/io5";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const sidebarRef = OutsideClickDetector(() => {
+    setIsOpen(false);
+  });
+
+  useEffect(() => {
+    const handler = () => {
+      if (window.scrollY > 200) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    document.addEventListener("scroll", handler);
+
+    return () => {
+      document.removeEventListener("scroll", handler);
+    };
+  });
+
   return (
-    <div className={styles.navbarWrapper}>
+    <div
+      className={`${styles.navbarWrapper} ${isScrolled ? styles.scrolled : ""}`}
+    >
       <div className="container-wrapper">
         <div className={styles.navbar}>
           <img src={logo} className={styles.logo} alt="" />
-          <div className={styles.right}>
+
+          <div
+            className={`${styles.right} ${isOpen ? styles.show : ""}`}
+            ref={sidebarRef}
+          >
+            <button
+              className={styles.closeBtn}
+              onClick={() => setIsOpen(false)}
+            >
+              <IoClose color="white" />
+            </button>
+
             <ul>
               <a
                 href="/"
@@ -57,8 +95,14 @@ function Navbar() {
               </a>
             </aside>
           </div>
+
+          <button className={styles.hamburger} onClick={() => setIsOpen(true)}>
+            <FiMenu color="white" />
+          </button>
         </div>
       </div>
+
+      <div className={`black-screen ${isOpen ? "show" : ""}`}></div>
     </div>
   );
 }

@@ -269,3 +269,73 @@ a {
 }
 
 // MEDIA QUIERS ==============
+
+@include u.breakpoint(twoxLarge) {
+  :root {
+    --fs-50px: #{u.rem(36)};
+    --fs-150px: #{u.rem(120)};
+    --fs-24px: #{u.rem(20)};
+    --fs-20px: #{u.rem(16)};
+    --fs-44px: #{u.rem(30)};
+    --fs-22px: #{u.rem(16)};
+    --fs-34px: #{u.rem(20)};
+    --fs-40px: #{u.rem(30)};
+    --fs-38px: #{u.rem(28)};
+    --fs-84px: #{u.rem(50)};
+    --fs-18px: #{u.rem(16)};
+    --fs-26px: #{u.rem(18)};
+    --fs-70px: #{u.rem(50)};
+  }
+}
+@include u.breakpoint(xLarge) {
+  :root {
+    --fs-150px: #{u.rem(100)};
+    --fs-24px: #{u.rem(18)};
+    --fs-50px: #{u.rem(30)};
+
+    // --fs-20px: #{u.rem(16)};
+    // --fs-44px: #{u.rem(30)};
+    // --fs-22px: #{u.rem(16)};
+    // --fs-34px: #{u.rem(20)};
+    // --fs-40px: #{u.rem(30)};
+    // --fs-38px: #{u.rem(28)};
+    // --fs-84px: #{u.rem(50)};
+    // --fs-18px: #{u.rem(16)};
+    // --fs-26px: #{u.rem(18)};
+    // --fs-70px: #{u.rem(50)};
+  }
+}
+@include u.breakpoint(xLarge) {
+  :root {
+    --fs-150px: #{u.rem(80)};
+    --fs-24px: #{u.rem(16)};
+    --fs-50px: #{u.rem(26)};
+
+    // --fs-20px: #{u.rem(16)};
+    // --fs-44px: #{u.rem(30)};
+    // --fs-22px: #{u.rem(16)};
+    // --fs-34px: #{u.rem(20)};
+    // --fs-40px: #{u.rem(30)};
+    // --fs-38px: #{u.rem(28)};
+    // --fs-84px: #{u.rem(50)};
+    // --fs-18px: #{u.rem(16)};
+    // --fs-26px: #{u.rem(18)};
+    // --fs-70px: #{u.rem(50)};
+  }
+}
+@include u.breakpoint(xsmall) {
+  :root {
+    --fs-150px: #{u.rem(60)};
+
+    // --fs-20px: #{u.rem(16)};
+    // --fs-44px: #{u.rem(30)};
+    // --fs-22px: #{u.rem(16)};
+    // --fs-34px: #{u.rem(20)};
+    // --fs-40px: #{u.rem(30)};
+    // --fs-38px: #{u.rem(28)};
+    // --fs-84px: #{u.rem(50)};
+    // --fs-18px: #{u.rem(16)};
+    // --fs-26px: #{u.rem(18)};
+    // --fs-70px: #{u.rem(50)};
+  }
+}

@@ -3,10 +3,10 @@
 .heroWrapper {
   position: relative;
 
-  .heroRightCircle {
+  .concentricCircle {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: -14%;
     transform: translateY(-50%);
     z-index: -10;
     height: 76%;
@@ -40,6 +40,67 @@
     aside {
       flex: 1;
       // max-width: u.rem(641);
+    }
+  }
+
+  @include u.breakpoint(large) {
+    .hero {
+      flex-direction: column;
+      align-items: unset;
+      padding-top: 8rem;
+      text-align: center;
+      justify-content: center;
+
+      & > :not(:last-child) {
+        margin-right: 0vw;
+        margin-bottom: 3vw;
+      }
+
+      main {
+        max-width: 100%;
+        flex: unset;
+        width: 100%;
+        p {
+          margin: 0 auto;
+          margin-bottom: 2rem;
+        }
+      }
+
+      aside {
+        flex: unset;
+        width: 100%;
+        max-width: 36rem;
+        margin: 0 auto;
+      }
+    }
+
+    .concentricCircle {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translateY(-50%) translateX(50%);
+      width: 90%;
+      opacity: 0.4;
+      z-index: -10;
+      height: unset;
+    }
+  }
+
+  @include u.breakpoint(xsmall) {
+    .hero {
+      & > :not(:last-child) {
+        margin-right: 0vw;
+        margin-bottom: 2rem;
+      }
+    }
+    .icons {
+      & > :not(:last-child) {
+        margin-right: u.rem(14) !important;
+      }
+    }
+
+    .concentricCircle {
+      width: 160%;
     }
   }
 }
