@@ -1,0 +1,15 @@
+@use "../utils" as u;
+
+.card {
+  flex: 1;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.43) 0%,
+    rgba(217, 217, 217, 0.1) 100%
+  );
+  box-shadow: u.rem(0) u.rem(4) u.rem(79) rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(u.rem(20));
+  border-radius: u.rem(20);
+  padding: u.rem(38) u.rem(46);
+}
