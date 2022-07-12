@@ -1,13 +1,22 @@
 /* COLORS */
 
 $orange: #d09756;
+$red: #ff1616;
+$brown: #5c1513;
+$black: #0a0908;
 
 .black {
-  color: #000000;
+  color: $black;
 }
 .white {
   color: #fafcff;
 }
 .orange {
   color: $orange;
+}
+.red {
+  color: $red;
+}
+.brown {
+  color: $brown;
 }

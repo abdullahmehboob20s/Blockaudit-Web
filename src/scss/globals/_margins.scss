@@ -103,24 +103,6 @@
   margin-top: rem(120);
 }
 
-// @include breakpoint(twoxLarge) {
-//   .mb-50px {
-//     margin-bottom: rem(40);
-//   }
-//   .mb-45px {
-//     margin-bottom: rem(35);
-//   }
-//   .mb-35px {
-//     margin-bottom: rem(25);
-//   }
-//   .mb-55px {
-//     margin-bottom: rem(40);
-//   }
-//   .mb-80px {
-//     margin-bottom: rem(50);
-//   }
-// }
-
 @include breakpoint(large) {
   .mb-200px {
     margin-bottom: rem(120);

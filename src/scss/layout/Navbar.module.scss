@@ -1,304 +1,65 @@
 @use "../utils" as u;
 @use "../globals/colors" as colors;
 
-.navbar {
+.navbarWrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
-  transition: all 0.3s ease;
 
-  nav {
-    transition: all 0.3s ease;
+  .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: u.rem(18) 0;
-    z-index: 90;
+    padding: u.rem(30) 0;
 
-    & > :not(:last-child) {
-      margin-right: u.rem(100);
-    }
-
-    .left {
-      display: flex;
-      align-items: center;
-      flex: 1;
-      max-width: u.rem(560);
-
-      .logo {
-        transition: all 0.3s ease;
-        width: u.rem(50);
-      }
-
-      .inputWrapper {
-        position: relative;
-        display: flex;
-        width: 100%;
-
-        &::after,
-        &::before {
-          content: "";
-          position: absolute;
-
-          width: 100%;
-          height: 100%;
-          z-index: -2;
-        }
-
-        &::after {
-          background: url("https://ik.imagekit.io/l4k8brcjb/images/input-border-img-top.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1657281031702");
-          background-position: top center;
-          background-repeat: no-repeat;
-          background-size: 100%;
-          top: calc(-1 * u.rem(6));
-          left: 0;
-        }
-        &::before {
-          background: url("https://ik.imagekit.io/l4k8brcjb/images/input-border-img-bottom.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1657281029070");
-          background-position: bottom center;
-          background-repeat: no-repeat;
-          background-size: 100%;
-          top: u.rem(6);
-          left: 0;
-        }
-
-        input {
-          width: 100%;
-          padding: u.rem(6) u.rem(16);
-          padding-right: u.rem(60);
-        }
-
-        span {
-          display: flex;
-          position: absolute;
-          top: calc(50% + u.rem(3));
-          right: u.rem(16);
-          transform: translateY(-50%);
-          pointer-events: none;
-        }
-      }
-
-      & > :not(:last-child) {
-        margin-right: u.rem(60);
-      }
+    .logo {
+      width: u.rem(206);
+      cursor: pointer;
     }
 
     .right {
       display: flex;
       align-items: center;
 
-      button {
-        transition: all 0.2s ease;
-        padding: u.rem(6) u.rem(16);
-        border: 2px solid transparent;
-
-        &:hover {
-          background-color: colors.$orange;
-        }
-      }
-      button.active {
-        border: 2px solid colors.$orange;
-      }
-
       & > :not(:last-child) {
-        margin-right: u.rem(10);
+        margin-right: u.rem(50);
       }
 
-      .closeNavbarBtn {
-        display: none;
-      }
-    }
+      ul {
+        display: flex;
+        align-items: center;
 
-    .hamburger {
-      display: none;
-    }
+        .navLink {
+          position: relative;
+          padding: 0 u.rem(20);
+        }
 
-    @include u.breakpoint(twoxLarge) {
-      padding: u.rem(16) 0;
-
-      .left {
-        max-width: u.rem(550);
-
-        .logo {
-          width: u.rem(44);
+        .navLink.active::before {
+          content: "";
+          position: absolute;
+          top: 120%;
+          left: 0;
+          width: 100%;
+          height: u.rem(3);
+          background-color: colors.$red;
         }
       }
 
-      .right {
-        // button {
-        //   transition: all 0.2s ease;
-        //   padding: u.rem(6) u.rem(16);
-        // }
-        & > :not(:last-child) {
-          margin-right: u.rem(10);
-        }
-      }
-    }
-
-    @include u.breakpoint(xLarge) {
-      .left {
-        max-width: u.rem(460);
-
-        .logo {
-          width: u.rem(50);
-        }
+      aside {
+        display: flex;
+        align-items: center;
 
         & > :not(:last-child) {
           margin-right: u.rem(40);
         }
-      }
-      .right {
-        button {
-          transition: all 0.2s ease;
-          padding: u.rem(7) u.rem(14);
-        }
-        & > :not(:last-child) {
-          margin-right: u.rem(10);
+
+        .btn {
+          border: 3px solid #ff1616;
+          border-radius: u.rem(14);
+          padding: u.rem(4) u.rem(30);
         }
       }
-    }
-
-    @include u.breakpoint(large) {
-      & > :not(:last-child) {
-        margin-right: u.rem(0);
-      }
-
-      .right {
-        position: fixed;
-        top: 0px;
-        right: 0px;
-        width: 300px;
-        height: 100%;
-        background-color: black;
-        flex-direction: column;
-        align-items: unset;
-        border-left: 2px solid #525252;
-        padding: u.rem(40);
-        transition: all 0.3s ease;
-        transform: translateX(300px);
-        z-index: 110;
-
-        &.active {
-          transform: translateX(u.rem(0));
-        }
-
-        .closeNavbarBtn {
-          display: block;
-          cursor: pointer;
-          display: flex;
-          width: fit-content;
-          padding: 0 0;
-          margin-left: u.rem(-5);
-        }
-
-        & > :not(:last-child) {
-          margin-right: u.rem(0);
-          margin-bottom: u.rem(30);
-        }
-      }
-
-      .left {
-        width: 100%;
-        max-width: unset;
-
-        margin-right: u.rem(40);
-      }
-
-      .hamburger {
-        display: block;
-      }
-    }
-
-    @include u.breakpoint(small) {
-      padding: u.rem(16) 0;
-
-      .left {
-        .logo {
-          width: u.rem(40);
-        }
-
-        .inputWrapper {
-          input {
-            padding: u.rem(2) u.rem(16);
-            padding-right: u.rem(60);
-          }
-
-          span {
-            top: calc(50% + u.rem(2));
-
-            svg {
-              font-size: 16px;
-            }
-          }
-        }
-
-        margin-right: u.rem(30);
-
-        & > :not(:last-child) {
-          margin-right: u.rem(26);
-        }
-      }
-    }
-
-    @include u.breakpoint(xsmall) {
-      .left {
-        .logo {
-          width: u.rem(34);
-        }
-      }
-
-      .hamburger {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        svg {
-          --size: 80%;
-
-          width: var(--size);
-          height: var(--size);
-        }
-      }
-    }
-  }
-
-  &.scrolled {
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 u.rem(5) u.rem(10) rgba(208, 151, 86, 0.2);
-
-    nav {
-      padding: u.rem(16) 0;
-
-      // .left {
-      //   .logo {
-      //     width: u.rem(60);
-      //   }
-      // }
-
-      // @include u.breakpoint(twoxLarge) {
-      //   .left {
-      //     .logo {
-      //       width: u.rem(50);
-      //     }
-      //   }
-      // }
-
-      // @include u.breakpoint(small) {
-      //   .left {
-      //     .logo {
-      //       width: u.rem(36);
-      //     }
-      //   }
-      // }
-      // @include u.breakpoint(xsmall) {
-      //   .left {
-      //     .logo {
-      //       width: u.rem(34);
-      //     }
-      //   }
-      // }
     }
   }
 }
