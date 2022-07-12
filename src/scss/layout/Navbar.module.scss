@@ -67,7 +67,7 @@
           border-radius: u.rem(14);
           padding: u.rem(4) u.rem(30);
           transition: all 0.2s ease;
-          box-shadow: 0 0 10px colors.$red;
+          box-shadow: 0 0 5px colors.$red;
 
           &:hover {
             background-color: colors.$red;
