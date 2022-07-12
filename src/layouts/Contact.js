@@ -63,16 +63,16 @@ function Contact() {
                 Follow Us :
               </h2>
               <div className={styles.socialIcons}>
-                <a href="#">
+                <a href="/">
                   <FaTwitter color="white" />
                 </a>
-                <a href="#">
+                <a href="/">
                   <FaTelegram color="white" />
                 </a>
-                <a href="#">
+                <a href="/">
                   <FaLinkedin color="white" />
                 </a>
-                <a href="#">
+                <a href="/">
                   <FaGithub color="white" />
                 </a>
               </div>
