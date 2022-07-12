@@ -46,6 +46,29 @@
           margin-right: u.rem(80);
         }
       }
+
+      @include u.breakpoint(xLarge) {
+        .cards {
+          & > :not(:last-child) {
+            margin-right: u.rem(30);
+          }
+        }
+      }
+
+      @include u.breakpoint(large) {
+        .cards {
+          flex-direction: column;
+
+          & > :not(:last-child) {
+            margin-right: u.rem(0);
+            margin-bottom: u.rem(20);
+          }
+        }
+      }
+    }
+
+    @include u.breakpoint(large) {
+      min-height: auto;
     }
   }
 }

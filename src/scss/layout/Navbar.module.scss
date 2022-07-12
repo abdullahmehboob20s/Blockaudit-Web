@@ -63,9 +63,15 @@
         }
 
         .btn {
-          border: 3px solid #ff1616;
+          border: 3px solid colors.$red;
           border-radius: u.rem(14);
           padding: u.rem(4) u.rem(30);
+          transition: all 0.2s ease;
+          box-shadow: 0 0 10px colors.$red;
+
+          &:hover {
+            background-color: colors.$red;
+          }
         }
       }
     }

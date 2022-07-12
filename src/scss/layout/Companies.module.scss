@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-bottom: -100px;
 
     .title {
       max-width: 40vw;
@@ -44,7 +45,7 @@
   section {
     $size: 34vw;
 
-    margin-top: -8%;
+    margin-bottom: 0%;
     z-index: -60;
 
     position: relative;

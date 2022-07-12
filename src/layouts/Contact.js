@@ -2,8 +2,10 @@ import React from "react";
 import styles from "scss/layout/Contact.module.scss";
 import { FaGithub, FaLinkedin, FaTelegram, FaTwitter } from "react-icons/fa";
 import contactBuildings from "assets/images/contact-buildings.png";
+import useMediaQuery from "hooks/useMediaQuery";
 
 function Contact() {
+  const isBellow1024px = useMediaQuery("(max-width : 64em)");
   return (
     <div className={`${styles.wrapper} py-200px`}>
       <img src={contactBuildings} className={styles.contactBuildings} alt="" />
@@ -48,7 +50,11 @@ function Contact() {
           <aside>
             <div className="mb-40px">
               <h2 className="fs-44px white weight-5 mb-5px lh-1">Email : </h2>
-              <p className="fs-26px white weight-2">
+              <p
+                className={`${
+                  isBellow1024px ? "fs-16px" : "fs-26px"
+                } white weight-2`}
+              >
                 support@blockaudit.report
               </p>
             </div>
@@ -58,25 +64,27 @@ function Contact() {
               </h2>
               <div className={styles.socialIcons}>
                 <a href="#">
-                  <FaTwitter size={32} color="white" />
+                  <FaTwitter color="white" />
                 </a>
                 <a href="#">
-                  <FaTelegram size={32} color="white" />
+                  <FaTelegram color="white" />
                 </a>
                 <a href="#">
-                  <FaLinkedin size={32} color="white" />
+                  <FaLinkedin color="white" />
                 </a>
                 <a href="#">
-                  <FaGithub size={32} color="white" />
+                  <FaGithub color="white" />
                 </a>
               </div>
             </div>
-            <div className="mb-40px">
+            <div>
               <h2 className="fs-44px white weight-5 mb-10px lh-1">
                 Address :{" "}
               </h2>
               <p
-                className="fs-26px white weight-2 lh-1_2"
+                className={`${
+                  isBellow1024px ? "fs-16px" : "fs-26px"
+                } white weight-2 lh-1_2`}
                 style={{ maxWidth: "20em" }}
               >
                 Office 1410, 14th Floor, ETA Star Building, Business Bay, Dubai,

@@ -86,6 +86,10 @@
       & > :not(:last-child) {
         margin-right: u.rem(16);
       }
+
+      & svg {
+        font-size: u.rem(32);
+      }
     }
   }
 
@@ -123,6 +127,84 @@
 
     aside {
       flex: 1;
+    }
+  }
+
+  @include u.breakpoint(xLarge) {
+    .formWrapper {
+      min-width: u.rem(500) !important;
+    }
+  }
+
+  @include u.breakpoint(large) {
+    .formWrapper {
+      min-width: unset !important;
+      // width: 100%;
+      max-width: unset;
+      padding: u.rem(40) u.rem(50);
+      flex: 1;
+      // margin: 0 auto;
+
+      header {
+        margin-bottom: u.rem(20);
+      }
+
+      form {
+        & > :not(:last-child) {
+          margin-bottom: u.rem(18);
+        }
+
+        input {
+          padding: u.rem(8) u.rem(12);
+        }
+
+        textarea {
+          padding: u.rem(10) u.rem(12);
+          height: u.rem(100);
+        }
+
+        button {
+          border: u.rem(2) solid #ffffff;
+          border-radius: u.rem(6);
+          padding: u.rem(4) u.rem(40);
+          margin-top: u.rem(20);
+        }
+      }
+    }
+
+    aside {
+      .socialIcons {
+        & svg {
+          font-size: u.rem(26);
+        }
+      }
+    }
+  }
+
+  @include u.breakpoint(medium) {
+    section {
+      flex-direction: column-reverse;
+    }
+
+    .formWrapper {
+      margin-right: 0vw;
+      margin-top: 3rem;
+    }
+
+    aside {
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @include u.breakpoint(xsmall) {
+    .formWrapper {
+      padding: u.rem(30) u.rem(30);
+      border-radius: 0.5rem;
+      margin-top: 2rem;
     }
   }
 }

@@ -4,19 +4,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  //   padding: 1rem 2rem;
+  padding: 4rem 3rem;
   // border: 2px solid red;
+  // justify-content: center;
+  position: relative;
 
   img {
-    --squareSize: 30%;
-
-    width: var(--squareSize);
-    height: var(--squareSize);
+    flex: unset;
+    width: 30% !important;
+    height: 30% !important;
+    margin-bottom: u.rem(34);
   }
 
   @include u.breakpoint(twoxLarge) {
+    padding: 2rem 2rem;
+
     img {
       --squareSize: 26%;
+    }
+  }
+
+  @include u.breakpoint(large) {
+    padding: 2rem 0;
+
+    img {
+      margin-bottom: u.rem(20);
+      width: 3.6rem !important;
+      height: 3.6rem !important;
     }
   }
 }

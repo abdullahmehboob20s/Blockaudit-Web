@@ -3,6 +3,12 @@
 .wrapper {
   header {
     position: relative;
+    & > div {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
 
     &::before {
       content: "";
@@ -13,6 +19,7 @@
       height: u.rem(15);
       background: linear-gradient(90deg, #ff1616 0%, rgba(92, 21, 19, 0) 100%);
       z-index: -20;
+      transform: translateY(-50%);
     }
     &::after {
       content: "";
@@ -22,7 +29,7 @@
       width: 20%;
       height: u.rem(15);
       background: linear-gradient(90deg, #ff1616 0%, rgba(92, 21, 19, 0) 100%);
-      transform: matrix(-1, 0, 0, 1, 0, 0);
+      transform: matrix(-1, 0, 0, 1, 0, 0) translateY(-50%);
       z-index: -20;
     }
   }
@@ -31,7 +38,7 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8rem 6rem;
+    // gap: 8rem 6rem;
 
     .line {
       position: absolute;
@@ -43,7 +50,7 @@
       width: 100%;
       height: u.rem(5);
       left: 0%;
-      top: 30%;
+      top: 33%;
 
       background: linear-gradient(
         90deg,
@@ -73,7 +80,7 @@
       width: u.rem(5);
       height: 100%;
       top: 0%;
-      left: calc(#{$linePosition} + 1.8%);
+      left: 33%;
       background: linear-gradient(
         rgba(255, 22, 22, 0) 0%,
         #ff1616 35.73%,
@@ -86,7 +93,7 @@
       width: u.rem(5);
       height: 100%;
       top: 0%;
-      right: calc(#{$linePosition} + 1.8%);
+      left: 66.5%;
       background: linear-gradient(
         rgba(255, 22, 22, 0) 0%,
         #ff1616 35.73%,
@@ -96,12 +103,51 @@
       border-radius: u.rem(42);
     }
 
-    @include u.breakpoint(twoxLarge) {
-      gap: 2rem 6rem;
+    @include u.breakpoint(large) {
+      grid-template-columns: unset;
+      display: block;
 
-      .line:nth-child(2) {
-        height: u.rem(5);
-        top: 65%;
+      .line {
+        display: none;
+      }
+
+      & > :not(:last-child) {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: u.rem(4);
+          top: 100%;
+          left: 0%;
+          z-index: -20;
+
+          background: linear-gradient(
+            90deg,
+            rgba(255, 22, 22, 0) 0%,
+            #ff1616 35.73%,
+            #ff1616 75.31%,
+            rgba(255, 22, 22, 0) 100%
+          );
+          border-radius: u.rem(42);
+        }
+      }
+    }
+  }
+
+  @include u.breakpoint(large) {
+    margin-top: 8rem;
+  }
+  @include u.breakpoint(medium) {
+    margin-top: 5rem;
+
+    header {
+      &::before {
+        height: u.rem(6);
+      }
+      &::after {
+        height: u.rem(6);
       }
     }
   }

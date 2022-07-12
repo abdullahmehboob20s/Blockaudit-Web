@@ -104,8 +104,11 @@
 }
 
 @include breakpoint(large) {
+  .mb-300px {
+    margin-bottom: rem(200);
+  }
   .mb-200px {
-    margin-bottom: rem(120);
+    margin-bottom: rem(100);
   }
   .mb-100px {
     margin-bottom: rem(60);
@@ -132,6 +135,16 @@
 }
 
 @include breakpoint(small) {
+  .mb-300px {
+    margin-bottom: rem(120);
+  }
+  .mb-200px {
+    margin-bottom: rem(90);
+  }
+  .mb-100px {
+    margin-bottom: rem(60);
+  }
+
   .mb-40px {
     margin-bottom: rem(30);
   }
@@ -146,5 +159,11 @@
   }
   .mb-25px {
     margin-bottom: rem(16);
+  }
+}
+
+@include breakpoint(xsmall) {
+  .mb-300px {
+    margin-bottom: rem(90);
   }
 }

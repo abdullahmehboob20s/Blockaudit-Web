@@ -10,11 +10,14 @@ import secure from "assets/images/icons/secure.svg";
 import high from "assets/images/icons/high.svg";
 import easy from "assets/images/icons/easy.svg";
 import affordable from "assets/images/icons/affordable.svg";
+import useMediaQuery from "hooks/useMediaQuery";
 
 function Business() {
+  const isBellow500px = useMediaQuery("(max-width : 31.25em)");
+
   return (
     <div className={styles.wrapper}>
-      <header className="mb-120px">
+      <header className={isBellow500px ? "mb-20px" : "mb-120px"}>
         <div className="container-wrapper">
           <h1 className="text-center fs-84px white weight-6 lh-1">
             Your Business is our Domain

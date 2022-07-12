@@ -68,5 +68,55 @@
     }
   }
 
+  @include u.breakpoint(large) {
+    section {
+      flex-direction: column;
+    }
+
+    aside {
+      margin-right: 0vw;
+      margin-bottom: 2rem;
+      max-width: 40rem;
+    }
+  }
+
+  @include u.breakpoint(small) {
+    .cards {
+      & > :not(:last-child) {
+        margin-right: u.rem(14);
+      }
+    }
+
+    .github_button {
+      padding: u.rem(10) u.rem(26);
+      border-radius: u.rem(6);
+
+      & > :not(:last-child) {
+        margin-right: u.rem(12);
+      }
+
+      svg {
+        font-size: u.rem(24);
+      }
+    }
+  }
+  @include u.breakpoint(xsmall) {
+    aside {
+      margin-right: 0vw;
+      margin-bottom: 1rem;
+    }
+
+    .cards {
+      display: grid;
+      align-items: unset;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+
+      & > :not(:last-child) {
+        margin-right: u.rem(0);
+      }
+    }
+  }
+
   //   END
 }
