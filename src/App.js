@@ -1,6 +1,7 @@
 import Companies from "layouts/Companies";
 import Hero from "layouts/Hero";
 import Navbar from "layouts/Navbar";
+import Security from "layouts/Security";
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
       </div>
       <div className="mb-300px">
         <Companies />
+      </div>
+      <div className="mb-200px">
+        <Security />
       </div>
     </div>
   );

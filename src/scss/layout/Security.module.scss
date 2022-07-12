@@ -1,0 +1,46 @@
+@use "../utils" as u;
+@use "../globals/colors" as colors;
+
+.wrapper {
+  section {
+    display: flex;
+    align-items: center;
+  }
+
+  aside {
+    flex: 1;
+    margin-right: 4vw;
+  }
+  main {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .cards {
+    display: flex;
+    align-items: center;
+
+    & > :not(:last-child) {
+      margin-right: u.rem(30);
+    }
+  }
+
+  .github_button {
+    padding: u.rem(20) u.rem(40);
+    background-color: colors.$red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: u.rem(14);
+    box-shadow: 0 0 14px #ff1616;
+
+    & > :not(:last-child) {
+      margin-right: u.rem(20);
+    }
+  }
+
+  //   END
+}
