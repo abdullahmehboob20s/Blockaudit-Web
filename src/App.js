@@ -13,7 +13,7 @@ function App() {
       <div className="mb-200px">
         <Hero />
       </div>
-      {/* <div className="mb-300px">
+      <div className="mb-300px">
         <Companies />
       </div>
       <div className="mb-200px">
@@ -23,7 +23,7 @@ function App() {
         <About />
       </div>
       <Business />
-      <Contact /> */}
+      <Contact />
     </div>
   );
 }
