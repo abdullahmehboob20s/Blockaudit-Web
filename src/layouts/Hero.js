@@ -29,7 +29,7 @@ function Hero() {
 
             <div className={`${styles.swiper} mb-15px`}>
               <Swiper
-                slidesPerView={"auto"}
+                slidesPerView={1}
                 spaceBetween={30}
                 loop={true}
                 centeredSlides={isBellow1024px ? true : false}
