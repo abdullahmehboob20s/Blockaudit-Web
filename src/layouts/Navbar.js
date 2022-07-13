@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styles from "scss/layout/Navbar.module.scss";
-import logo from "assets/images/logo.png";
 import OutsideClickDetector from "hooks/OutsideClickDetector";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
