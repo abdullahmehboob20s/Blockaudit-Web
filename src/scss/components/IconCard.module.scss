@@ -1,27 +1,31 @@
 @use "../utils" as u;
 
 .card {
+  position: relative;
   width: u.rem(120);
   height: u.rem(159);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.38) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  filter: drop-shadow(u.rem(0) u.rem(4) u.rem(25) rgba(0, 0, 0, 0.48));
-  backdrop-filter: blur(u.rem(20));
   border-radius: u.rem(10);
   transform: translate3d(0, 0, 0) !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
   & > :not(:last-child) {
     margin-bottom: u.rem(8);
   }
 
-  img {
+  .bgFilterImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: 100% 100%;
+  }
+
+  .icon {
     height: 50%;
     width: 66%;
   }
@@ -30,7 +34,7 @@
     width: u.rem(100);
     height: u.rem(139);
 
-    img {
+    .icon {
       height: 38%;
       width: 54%;
     }

@@ -15,10 +15,13 @@
 
   section {
     display: flex;
+    align-items: center;
   }
 
   .formWrapper {
     flex: 1;
+    position: relative;
+    overflow: hidden;
 
     header {
       margin-bottom: u.rem(60);
