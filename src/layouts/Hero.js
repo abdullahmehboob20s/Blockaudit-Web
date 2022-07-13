@@ -1,11 +1,7 @@
 import IconCard from "components/IconCard";
-import React from "react";
 import styles from "scss/layout/Hero.module.scss";
-import icon1 from "assets/images/icons/audit.svg";
-import icon2 from "assets/images/icons/escrow.svg";
-import icon3 from "assets/images/icons/kyc.svg";
-import editor from "assets/images/editor.png";
-import concentricCircle from "assets/images/concentric-circle.png";
+import useMediaQuery from "hooks/useMediaQuery";
+import { IKImage } from "imagekitio-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -13,9 +9,17 @@ import "swiper/css/effect-coverflow";
 import { Autoplay } from "swiper";
 
 function Hero() {
+  const isBellow1024px = useMediaQuery("(max-width : 64em)");
+
   return (
     <div className={styles.heroWrapper}>
-      <img src={concentricCircle} className={styles.concentricCircle} alt="" />
+      <IKImage
+        lqip={{ active: true }}
+        loading="lazy"
+        path="concentric-circle.png"
+        className={styles.concentricCircle}
+        alt=""
+      />
 
       <div className="container-wrapper">
         <div className={styles.hero}>
@@ -24,11 +28,12 @@ function Hero() {
               Audit <span className="red">Service</span> For
             </h2>
 
-            <div className={styles.swiper}>
+            <div className={`${styles.swiper} mb-15px`}>
               <Swiper
                 slidesPerView={"auto"}
                 spaceBetween={40}
                 modules={[Autoplay]}
+                centeredSlides={isBellow1024px ? true : false}
                 loop={true}
                 className={`heroSwiper`}
                 autoplay={{
@@ -37,19 +42,13 @@ function Hero() {
                 }}
               >
                 <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1 mb-15px">
-                    DeFi.
-                  </h1>
+                  <h1 className="fs-150px white weight-8 lh-1">DeFi.</h1>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1 mb-15px">
-                    Dapps.
-                  </h1>
+                  <h1 className="fs-150px white weight-8 lh-1">Dapps.</h1>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1 mb-15px">
-                    Token.
-                  </h1>
+                  <h1 className="fs-150px white weight-8 lh-1">Token.</h1>
                 </SwiperSlide>
               </Swiper>
             </div>
@@ -62,14 +61,20 @@ function Hero() {
             </p>
 
             <div className={styles.icons}>
-              <IconCard icon={icon1} title="Audit" />
-              <IconCard icon={icon3} title="KYC" />
-              <IconCard icon={icon2} title="Escrow" />
+              <IconCard icon="icons/audit.svg" title="Audit" />
+              <IconCard icon="icons/escrow.svg" title="KYC" />
+              <IconCard icon="icons/kyc.svg" title="Escrow" />
             </div>
           </main>
 
           <aside>
-            <img src={editor} className="w-full" alt="" />
+            <IKImage
+              lqip={{ active: true }}
+              loading="lazy"
+              path="editor.png"
+              className="w-full"
+              alt=""
+            />
           </aside>
         </div>
       </div>

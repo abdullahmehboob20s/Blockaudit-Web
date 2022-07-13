@@ -1,14 +1,20 @@
 import React from "react";
 import styles from "scss/layout/Contact.module.scss";
 import { FaGithub, FaLinkedin, FaTelegram, FaTwitter } from "react-icons/fa";
-import contactBuildings from "assets/images/contact-buildings.png";
 import useMediaQuery from "hooks/useMediaQuery";
+import { IKImage } from "imagekitio-react";
 
 function Contact() {
   const isBellow1024px = useMediaQuery("(max-width : 64em)");
   return (
     <div className={`${styles.wrapper} py-200px`}>
-      <img src={contactBuildings} className={styles.contactBuildings} alt="" />
+      <IKImage
+        lqip={{ active: true }}
+        loading="lazy"
+        path={"contact-buildings.png"}
+        className={styles.contactBuildings}
+        alt=""
+      />
 
       <div className="container-wrapper">
         <section>

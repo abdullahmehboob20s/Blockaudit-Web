@@ -1,21 +1,53 @@
 import React from "react";
 import styles from "scss/layout/About.module.scss";
-import numBg from "assets/images/numbers-bg.png";
 import AboutCard from "components/AboutCard";
-import redCircle from "assets/images/red-thick-circle.svg";
-import solanaIcon from "assets/images/solana.svg";
-import polygonIcon from "assets/images/polygon.svg";
-import ethIcon from "assets/images/eth-icon.png";
+import { IKImage } from "imagekitio-react";
 
 function About() {
   return (
     <div className={styles.wrapper}>
-      <img src={numBg} className={`${styles.numberBg}`} alt="" />
-      <img src={redCircle} className={styles.redCircle1} alt="" />
-      <img src={redCircle} className={styles.redCircle2} alt="" />
-      <img src={solanaIcon} className={styles.solanaIcon} alt="" />
-      <img src={polygonIcon} className={styles.polygonIcon} alt="" />
-      <img src={ethIcon} className={styles.ethIcon} alt="" />
+      <IKImage
+        lqip={{ active: true }}
+        loading="lazy"
+        path={"numbers-bg.png"}
+        className={`${styles.numberBg}`}
+        alt=""
+      />
+      <IKImage
+        lqip={{ active: true }}
+        loading="lazy"
+        path={"red-thick-circle.svg"}
+        className={styles.redCircle1}
+        alt=""
+      />
+      <IKImage
+        lqip={{ active: true }}
+        loading="lazy"
+        path={"red-thick-circle.svg"}
+        className={styles.redCircle2}
+        alt=""
+      />
+      <IKImage
+        lqip={{ active: true }}
+        loading="lazy"
+        path={"solana.svg"}
+        className={styles.solanaIcon}
+        alt=""
+      />
+      <IKImage
+        lqip={{ active: true }}
+        loading="lazy"
+        path={"polygon.svg"}
+        className={styles.polygonIcon}
+        alt=""
+      />
+      <IKImage
+        lqip={{ active: true }}
+        loading="lazy"
+        path={"eth-icon.png"}
+        className={styles.ethIcon}
+        alt=""
+      />
 
       <main>
         <section>

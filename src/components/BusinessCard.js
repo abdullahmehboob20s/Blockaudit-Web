@@ -1,4 +1,5 @@
 import useMediaQuery from "hooks/useMediaQuery";
+import { IKImage } from "imagekitio-react";
 import React from "react";
 import styles from "scss/components/BusinessCard.module.scss";
 
@@ -7,7 +8,7 @@ function BusinessCard({ img, title, subtitle }) {
 
   return (
     <div className={styles.card}>
-      <img src={img} alt="" />
+      <IKImage lqip={{ active: true }} loading="lazy" path={img} alt="" />
       <h1 className={`mb-20px text-center fs-26px weight-6 white lh-1`}>
         {title}
       </h1>

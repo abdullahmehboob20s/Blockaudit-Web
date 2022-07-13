@@ -1,15 +1,6 @@
 import BusinessCard from "components/BusinessCard";
 import React from "react";
 import styles from "scss/layout/Business.module.scss";
-import automated from "assets/images/icons/automated.svg";
-import solidity from "assets/images/icons/solidity.svg";
-import recommendation from "assets/images/icons/recommendation.svg";
-import reporting from "assets/images/icons/reporting.svg";
-import delivery from "assets/images/icons/delivery.svg";
-import secure from "assets/images/icons/secure.svg";
-import high from "assets/images/icons/high.svg";
-import easy from "assets/images/icons/easy.svg";
-import affordable from "assets/images/icons/affordable.svg";
 import useMediaQuery from "hooks/useMediaQuery";
 
 function Business() {
@@ -32,47 +23,47 @@ function Business() {
           <div className={styles.line}></div>
           <div className={styles.line}></div>
           <BusinessCard
-            img={automated}
+            img={"icons/automated.svg"}
             title="Automated Testing"
             subtitle="We do a variety of interactions with your smart contract manually on test net blockchain and also with test tools for figuring out the vulnerabilities."
           />
           <BusinessCard
-            img={solidity}
+            img={"icons/solidity.svg"}
             title="Solidity Assessment"
             subtitle="We do simulates and examine line by line by our experts to identify the vulnerabilities or other issues."
           />
           <BusinessCard
-            img={recommendation}
+            img={"icons/recommendation.svg"}
             title="Recommendation"
             subtitle="After finding the Security issues and errors (if any) we do suggest to improve the codes for high level of security."
           />
           <BusinessCard
-            img={reporting}
+            img={"icons/reporting.svg"}
             title="Reporting"
             subtitle="After the issues is resolved the transparent reporting of the smart contract is done with highlighting the main functions."
           />
           <BusinessCard
-            img={delivery}
+            img={"icons/delivery.svg"}
             title="Delivery"
             subtitle="Final publication of the report is done and delivered with the security scores depicted in graphs and it also get posted in our community."
           />
           <BusinessCard
-            img={secure}
+            img={"icons/secure.svg"}
             title="Secure and Safe"
             subtitle="We deeply examine the codes line by line with manual and automated test is carried out on test net blockchain before publication."
           />
           <BusinessCard
-            img={high}
+            img={"icons/high.svg"}
             title="High Efficiency"
             subtitle="With our experienced engineers the Security reports and recommendations are done quicker for saving the clients time."
           />
           <BusinessCard
-            img={easy}
+            img={"icons/easy.svg"}
             title="Easy To Understand"
             subtitle="Our reports are very easy to understand for all investors across the world because of decent stylish and its functions are highlighted in different colours."
           />
           <BusinessCard
-            img={affordable}
+            img={"icons/affordable.svg"}
             title="Affordable"
             subtitle="We deeply examine the codes line by line with manual and automated test is carried out on test net blockchain before publication."
           />

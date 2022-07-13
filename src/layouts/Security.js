@@ -2,23 +2,51 @@ import React from "react";
 import styles from "scss/layout/Security.module.scss";
 import { FaGithub } from "react-icons/fa";
 import SecurityCard from "components/SecurityCard";
-import securityBanner from "assets/images/security-banner.png";
-import redCircle from "assets/images/red-thick-circle.svg";
-import bitcoinIcon from "assets/images/bitcoin-icon.png";
+import { IKImage } from "imagekitio-react";
 
 function Security() {
   return (
     <div className={styles.wrapper}>
-      <img src={redCircle} className={styles.redCircleOuter} alt="" />
-      <img src={redCircle} className={styles.redCircleOuter2} alt="" />
+      <IKImage
+        lqip={{ active: true }}
+        loading="lazy"
+        path={"red-thick-circle.svg"}
+        className={styles.redCircleOuter}
+        alt=""
+      />
+      <IKImage
+        lqip={{ active: true }}
+        loading="lazy"
+        path={"red-thick-circle.svg"}
+        className={styles.redCircleOuter2}
+        alt=""
+      />
 
       <div className="container-wrapper">
         <section>
           <aside>
-            <img src={redCircle} className={styles.redCircle} alt="" />
-            <img src={bitcoinIcon} className={styles.bitcoinIcon} alt="" />
+            <IKImage
+              lqip={{ active: true }}
+              loading="lazy"
+              path={"red-thick-circle.svg"}
+              className={styles.redCircle}
+              alt=""
+            />
+            <IKImage
+              lqip={{ active: true }}
+              loading="lazy"
+              path={"bitcoin-icon.png"}
+              className={styles.bitcoinIcon}
+              alt=""
+            />
 
-            <img src={securityBanner} className="w-full" alt="" />
+            <IKImage
+              lqip={{ active: true }}
+              loading="lazy"
+              path={"security-banner.png"}
+              className="w-full"
+              alt=""
+            />
           </aside>
           <main>
             <h1 className="fs-44px weight-5 white mb-20px lh-1">
@@ -45,7 +73,13 @@ function Security() {
             </button>
 
             <div className={styles.cards}>
-              <img src={redCircle} className={styles.cardsredCircle} alt="" />
+              <IKImage
+                lqip={{ active: true }}
+                loading="lazy"
+                path={"red-thick-circle.svg"}
+                className={styles.cardsredCircle}
+                alt=""
+              />
 
               <SecurityCard title="Audits" subtitle="235+" />
               <SecurityCard title="KYC" subtitle="50+" />

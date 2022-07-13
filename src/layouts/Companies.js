@@ -1,11 +1,6 @@
 import React from "react";
 import styles from "scss/layout/Companies.module.scss";
-import bigCircle from "assets/images/companies-big-circle.png";
-import stripeWithCircle from "assets/images/stripe-with-circle.png";
-import wonderfullClients from "assets/images/wonderfull-clients.png";
-import bitcoinIcon from "assets/images/bitcoin-icon.png";
-import redCircle from "assets/images/red-thick-circle.svg";
-import ethIcon from "assets/images/eth-icon.png";
+import { IKImage } from "imagekitio-react";
 
 function Companies() {
   return (
@@ -14,15 +9,46 @@ function Companies() {
         <main>
           <div className={styles.stripeWithCircle}>
             <div className={styles.bigCircle}>
-              <img src={bigCircle} alt="" />
+              <IKImage
+                lqip={{ active: true }}
+                loading="lazy"
+                path={"companies-big-circle.png"}
+                alt=""
+              />
 
-              <img src={bitcoinIcon} className={styles.bitcoinIcon} alt="" />
-              <img src={redCircle} className={styles.redCircle} alt="" />
-              <img src={ethIcon} className={styles.ethIcon} alt="" />
-              <img src={redCircle} className={styles.redCircle2} alt="" />
+              <IKImage
+                lqip={{ active: true }}
+                loading="lazy"
+                path={"bitcoin-icon.png"}
+                className={styles.bitcoinIcon}
+                alt=""
+              />
+              <IKImage
+                lqip={{ active: true }}
+                loading="lazy"
+                path={"red-thick-circle.svg"}
+                className={styles.redCircle}
+                alt=""
+              />
+              <IKImage
+                lqip={{ active: true }}
+                loading="lazy"
+                path={"eth-icon.png"}
+                className={styles.ethIcon}
+                alt=""
+              />
+              <IKImage
+                lqip={{ active: true }}
+                loading="lazy"
+                path={"red-thick-circle.svg"}
+                className={styles.redCircle2}
+                alt=""
+              />
             </div>
-            <img
-              src={stripeWithCircle}
+            <IKImage
+              lqip={{ active: true }}
+              loading="lazy"
+              path={"stripe-with-circle.png"}
               className={styles.stripeAndCircle}
               alt=""
             />
@@ -35,9 +61,17 @@ function Companies() {
         </main>
 
         <section>
-          <img src={bigCircle} className={styles.sectionBigCircle} alt="" />
-          <img
-            src={wonderfullClients}
+          <IKImage
+            lqip={{ active: true }}
+            loading="lazy"
+            path={"companies-big-circle.png"}
+            className={styles.sectionBigCircle}
+            alt=""
+          />
+          <IKImage
+            lqip={{ active: true }}
+            loading="lazy"
+            path={"wonderfull-clients.png"}
             className={styles.wonderfullClients}
             alt=""
           />

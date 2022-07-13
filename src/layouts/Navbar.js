@@ -4,6 +4,7 @@ import logo from "assets/images/logo.png";
 import OutsideClickDetector from "hooks/OutsideClickDetector";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
+import { IKImage } from "imagekitio-react";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +35,13 @@ function Navbar() {
     >
       <div className="container-wrapper">
         <div className={styles.navbar}>
-          <img src={logo} className={styles.logo} alt="" />
+          <IKImage
+            lqip={{ active: true }}
+            loading="lazy"
+            path={"logo.png"}
+            className={styles.logo}
+            alt=""
+          />
 
           <div
             className={`${styles.right} ${isOpen ? styles.show : ""}`}
