@@ -2,21 +2,11 @@
 
 .heroSwiper {
   .swiper-slide {
-    // border: 2px solid red;
-    box-shadow: 0;
     opacity: 0.2;
     transition: all 0.3s ease;
-    width: auto !important;
 
     &.swiper-slide-active {
       opacity: 1;
-    }
-
-    .swiper-slide-shadow-left {
-      display: none;
-    }
-    .swiper-slide-shadow-right {
-      display: none;
     }
   }
 }

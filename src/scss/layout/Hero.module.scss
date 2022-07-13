@@ -6,8 +6,7 @@
 
   .swiper {
     position: relative;
-    width: 100%;
-    // border: 2px solid red;
+    // min-width: 100%;
 
     &::before {
       content: "";

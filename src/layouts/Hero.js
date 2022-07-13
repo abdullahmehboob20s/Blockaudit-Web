@@ -5,7 +5,6 @@ import { IKImage } from "imagekitio-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 import { Autoplay } from "swiper";
 
 function Hero() {
@@ -31,15 +30,16 @@ function Hero() {
             <div className={`${styles.swiper} mb-15px`}>
               <Swiper
                 slidesPerView={"auto"}
-                spaceBetween={40}
-                modules={[Autoplay]}
-                centeredSlides={isBellow1024px ? true : false}
+                spaceBetween={30}
                 loop={true}
-                className={`heroSwiper`}
+                centeredSlides={isBellow1024px ? true : false}
                 autoplay={{
                   delay: 1500,
                   disableOnInteraction: false,
+                  waitForTransition: true,
                 }}
+                className={`heroSwiper`}
+                modules={[Autoplay]}
               >
                 <SwiperSlide>
                   <h1 className="fs-150px white weight-8 lh-1">DeFi.</h1>
