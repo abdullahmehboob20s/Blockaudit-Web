@@ -3,6 +3,9 @@ import styles from "scss/layout/Companies.module.scss";
 import bigCircle from "assets/images/companies-big-circle.png";
 import stripeWithCircle from "assets/images/stripe-with-circle.png";
 import wonderfullClients from "assets/images/wonderfull-clients.png";
+import bitcoinIcon from "assets/images/bitcoin-icon.png";
+import redCircle from "assets/images/red-thick-circle.svg";
+import ethIcon from "assets/images/eth-icon.png";
 
 function Companies() {
   return (
@@ -10,7 +13,14 @@ function Companies() {
       <div className="container-wrapper">
         <main>
           <div className={styles.stripeWithCircle}>
-            <img src={bigCircle} className={styles.bigCircle} alt="" />
+            <div className={styles.bigCircle}>
+              <img src={bigCircle} alt="" />
+
+              <img src={bitcoinIcon} className={styles.bitcoinIcon} alt="" />
+              <img src={redCircle} className={styles.redCircle} alt="" />
+              <img src={ethIcon} className={styles.ethIcon} alt="" />
+              <img src={redCircle} className={styles.redCircle2} alt="" />
+            </div>
             <img
               src={stripeWithCircle}
               className={styles.stripeAndCircle}

@@ -33,6 +33,44 @@
         width: 54%;
         z-index: -20;
         filter: none;
+        display: flex;
+        // border: 2px solid red;
+
+        .bitcoinIcon {
+          position: absolute;
+          top: 92%;
+          left: 50%;
+          width: 12%;
+          transform: translateX(-50%) rotate(-30deg);
+        }
+        .redCircle {
+          position: absolute;
+          top: 112%;
+          left: 44%;
+          width: 40%;
+          transform: translateX(-50%) rotate(-30deg);
+          opacity: 0.4;
+        }
+        .ethIcon {
+          position: absolute;
+          top: 124%;
+          left: 94%;
+          width: 12%;
+          transform: translateX(-50%);
+        }
+        .redCircle2 {
+          position: absolute;
+          top: 144%;
+          left: 110%;
+          width: u.rem(160);
+          width: 23%;
+          transform: translateX(-50%) rotate(-30deg);
+          opacity: 0.4;
+        }
+
+        img {
+          width: 100%;
+        }
       }
 
       .stripeAndCircle {

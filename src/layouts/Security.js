@@ -3,13 +3,21 @@ import styles from "scss/layout/Security.module.scss";
 import { FaGithub } from "react-icons/fa";
 import SecurityCard from "components/SecurityCard";
 import securityBanner from "assets/images/security-banner.png";
+import redCircle from "assets/images/red-thick-circle.svg";
+import bitcoinIcon from "assets/images/bitcoin-icon.png";
 
 function Security() {
   return (
     <div className={styles.wrapper}>
+      <img src={redCircle} className={styles.redCircleOuter} alt="" />
+      <img src={redCircle} className={styles.redCircleOuter2} alt="" />
+
       <div className="container-wrapper">
         <section>
           <aside>
+            <img src={redCircle} className={styles.redCircle} alt="" />
+            <img src={bitcoinIcon} className={styles.bitcoinIcon} alt="" />
+
             <img src={securityBanner} className="w-full" alt="" />
           </aside>
           <main>
@@ -37,6 +45,8 @@ function Security() {
             </button>
 
             <div className={styles.cards}>
+              <img src={redCircle} className={styles.cardsredCircle} alt="" />
+
               <SecurityCard title="Audits" subtitle="235+" />
               <SecurityCard title="KYC" subtitle="50+" />
               <SecurityCard title="Millions MC" subtitle="200+" />

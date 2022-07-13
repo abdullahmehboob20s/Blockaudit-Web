@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <div className="mb-200px">
+      <div className="mb-100px">
         <Hero />
       </div>
       <div className="mb-300px">
