@@ -71,7 +71,7 @@ function Hero() {
             <IKImage
               lqip={{ active: true }}
               loading="lazy"
-              path="editor.png"
+              path="code-editor-img.svg"
               className="w-full"
               alt=""
             />
