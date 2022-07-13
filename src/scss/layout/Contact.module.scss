@@ -34,6 +34,7 @@
     backdrop-filter: blur(u.rem(35));
     border-radius: u.rem(30);
     padding: u.rem(72) u.rem(80);
+    transform: translate3d(0, 0, 0) !important;
 
     form {
       display: flex;

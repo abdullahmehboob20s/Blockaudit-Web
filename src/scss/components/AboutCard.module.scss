@@ -12,6 +12,7 @@
   backdrop-filter: blur(u.rem(20));
   border-radius: u.rem(20);
   padding: u.rem(38) u.rem(46);
+  transform: translate3d(0, 0, 0) !important;
 
   @include u.breakpoint(xLarge) {
     padding: u.rem(26) u.rem(36);
