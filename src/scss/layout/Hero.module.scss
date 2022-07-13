@@ -1,7 +1,30 @@
 @use "../utils" as u;
+@use "../globals/colors" as colors;
 
 .heroWrapper {
   position: relative;
+
+  .swiper {
+    position: relative;
+    width: 100%;
+    // border: 2px solid red;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent 10%, colors.$black 80%);
+      z-index: 100;
+    }
+
+    h1 {
+      // font-size: 5.5vw;
+      // border: 2px solid red;
+    }
+  }
 
   .concentricCircle {
     position: absolute;
@@ -25,6 +48,10 @@
     main {
       flex: 1;
       max-width: u.rem(641);
+
+      .defiTitle {
+        opacity: 0;
+      }
 
       .icons {
         display: flex;
@@ -104,3 +131,22 @@
     }
   }
 }
+
+// .swiper {
+//   position: absolute;
+//   top: 30%;
+//   left: 5%;
+//   width: 40%;
+//   // border: 2px solid red;
+
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 20%;
+//     height: 100%;
+//     background: linear-gradient(90deg, transparent 10%, colors.$black 80%);
+//     z-index: 100;
+//   }
+// }

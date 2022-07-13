@@ -7,6 +7,11 @@ import icon3 from "assets/images/icons/kyc.svg";
 import editor from "assets/images/editor.png";
 import concentricCircle from "assets/images/concentric-circle.png";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import { Autoplay } from "swiper";
+
 function Hero() {
   return (
     <div className={styles.heroWrapper}>
@@ -18,7 +23,37 @@ function Hero() {
             <h2 className="fs-50px white weight-3 lh-1">
               Audit <span className="red">Service</span> For
             </h2>
-            <h1 className="fs-150px white weight-8 lh-1 mb-15px">DeFi.</h1>
+
+            <div className={styles.swiper}>
+              <Swiper
+                slidesPerView={"auto"}
+                spaceBetween={40}
+                modules={[Autoplay]}
+                loop={true}
+                className={`heroSwiper`}
+                autoplay={{
+                  delay: 1500,
+                  disableOnInteraction: false,
+                }}
+              >
+                <SwiperSlide>
+                  <h1 className="fs-150px white weight-8 lh-1 mb-15px">
+                    DeFi.
+                  </h1>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <h1 className="fs-150px white weight-8 lh-1 mb-15px">
+                    Dapps.
+                  </h1>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <h1 className="fs-150px white weight-8 lh-1 mb-15px">
+                    Token.
+                  </h1>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+
             <p
               className="fs-24px white weight-2 lh-1_4 opacity-0_6 mb-30px"
               style={{ maxWidth: "22em" }}
