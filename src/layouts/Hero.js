@@ -83,10 +83,13 @@ function Hero() {
             </Splide>
 
             <p
-              className="fs-24px white weight-2 lh-1_4 opacity-0_6 mb-30px"
+              className="fs-24px white weight-2 lh-1_4 mb-30px"
               style={{ maxWidth: "22em" }}
             >
-              Audit, KYC documents, Escrow And Development, All at one place
+              <span className="opacity-0_6">
+                Audit, KYC documents, Escrow And Development,
+              </span>{" "}
+              <span className="red opacity-1">All at one place.</span>
             </p>
 
             <div className={styles.icons}>
