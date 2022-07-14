@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "scss/components/Toast.module.scss";
-import { IoClose } from "react-icons/io5";
+// import { IoClose } from "react-icons/io5";
 import useMediaQuery from "hooks/useMediaQuery";
 
 function Toast({ title, state, stateSetter, toastRef }) {

@@ -2,11 +2,13 @@ import IconCard from "components/IconCard";
 import styles from "scss/layout/Hero.module.scss";
 import { IKImage } from "imagekitio-react";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { Autoplay } from "swiper";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+import useMediaQuery from "hooks/useMediaQuery";
 
 function Hero() {
+  const isBellow1024px = useMediaQuery("(max-width : 64em)");
+
   return (
     <div className={styles.heroWrapper}>
       <IKImage
@@ -24,7 +26,69 @@ function Hero() {
               Audit <span className="red">Service</span> For
             </h2>
 
-            <div className={`${styles.swiper} mb-15px`}>
+            {/* <h1
+              className={`fs-150px white weight-8 lh-1 ${styles.placeholderTitle}`}
+            >
+              DApp<span className="red">.</span>
+            </h1> */}
+
+            <Splide
+              options={{
+                arrows: false,
+                pagination: false,
+                autoWidth: true,
+                gap: 30,
+                autoplay: true,
+                interval: 1000,
+                type: "loop",
+                focus: isBellow1024px ? "center" : "left",
+                padding: { left: isBellow1024px ? 0 : "10%" },
+              }}
+              className={`${styles.splideSlider} splideSlider`}
+            >
+              <SplideSlide>
+                <h1 className="fs-150px white weight-8 lh-1">
+                  DApp<span className="red">.</span>
+                </h1>
+              </SplideSlide>
+              <SplideSlide>
+                <h1 className="fs-150px white weight-8 lh-1">
+                  DeFi<span className="red">.</span>
+                </h1>
+              </SplideSlide>
+              <SplideSlide>
+                <h1 className="fs-150px white weight-8 lh-1">
+                  GameFi<span className="red">.</span>
+                </h1>
+              </SplideSlide>
+              <SplideSlide>
+                <h1 className="fs-150px white weight-8 lh-1">
+                  P2E<span className="red">.</span>
+                </h1>
+              </SplideSlide>
+              <SplideSlide>
+                <h1 className="fs-150px white weight-8 lh-1">
+                  Contract<span className="red">.</span>
+                </h1>
+              </SplideSlide>
+              <SplideSlide>
+                <h1 className="fs-150px white weight-8 lh-1">
+                  Token<span className="red">.</span>
+                </h1>
+              </SplideSlide>
+              <SplideSlide>
+                <h1 className="fs-150px white weight-8 lh-1">
+                  Coin<span className="red">.</span>
+                </h1>
+              </SplideSlide>
+              <SplideSlide>
+                <h1 className="fs-150px white weight-8 lh-1">
+                  Blockchain<span className="red">.</span>
+                </h1>
+              </SplideSlide>
+            </Splide>
+
+            {/* <div className={`${styles.swiper} mb-15px`}>
               <Swiper
                 slidesPerView={"auto"}
                 spaceBetween={30}
@@ -77,7 +141,7 @@ function Hero() {
                   </h1>
                 </SwiperSlide>
               </Swiper>
-            </div>
+            </div> */}
 
             <p
               className="fs-24px white weight-2 lh-1_4 opacity-0_6 mb-30px"

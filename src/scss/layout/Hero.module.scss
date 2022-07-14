@@ -4,6 +4,45 @@
 .heroWrapper {
   position: relative;
 
+  .splideSlider {
+    position: relative;
+    left: -11%;
+    width: 100% + 11%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6%;
+      height: 100%;
+      background: linear-gradient(-90deg, transparent 10%, colors.$black 80%);
+      z-index: 100;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent 10%, colors.$black 80%);
+      z-index: 100;
+    }
+
+    @include u.breakpoint(large) {
+      left: 0%;
+      width: 100%;
+
+      &::before {
+        display: none;
+      }
+      &::after {
+        display: none;
+      }
+    }
+  }
+
   .swiper {
     position: relative;
     width: 100%;
