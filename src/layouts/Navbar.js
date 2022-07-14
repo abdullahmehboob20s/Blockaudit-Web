@@ -5,13 +5,24 @@ import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { IKImage } from "imagekitio-react";
 import DropdownItem from "components/DropdownItem";
+import { BiChevronDown } from "react-icons/bi";
+import useMediaQuery from "hooks/useMediaQuery";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHover, setIsHover] = useState(false);
+  const isBellow1024px = useMediaQuery("(max-width : 64em)");
   const sidebarRef = OutsideClickDetector(() => {
     setIsOpen(false);
   });
+  const dropdownRef = OutsideClickDetector(() => {
+    setIsHover(false);
+  });
+
+  const dropdownToggler = () => {
+    setIsHover((val) => !val);
+  };
 
   useEffect(() => {
     const handler = () => {
@@ -62,10 +73,32 @@ function Navbar() {
                 Home
               </a>
               <div
-                className={`${styles.navLink} fs-20px white weight-3 pointer`}
+                className={`${styles.navLink} ${styles.isDropdown}`}
+                ref={dropdownRef}
               >
-                <span>Services</span>
-                <div className={styles.dropdown}>
+                <button
+                  className={`${styles.drodpownTitle} fs-20px white weight-3 pointer`}
+                  onMouseEnter={() =>
+                    isBellow1024px ? null : setIsHover(true)
+                  }
+                  onMouseLeave={() =>
+                    isBellow1024px ? null : setIsHover(false)
+                  }
+                  onClick={() => dropdownToggler()}
+                >
+                  Services <BiChevronDown color="white" />
+                </button>
+                <div
+                  className={`${styles.dropdown} ${
+                    isHover ? styles.active : ""
+                  }`}
+                  onMouseEnter={() =>
+                    isBellow1024px ? null : setIsHover(true)
+                  }
+                  onMouseLeave={() =>
+                    isBellow1024px ? null : setIsHover(false)
+                  }
+                >
                   <DropdownItem title="Audit" icon="icons/automated.svg" />
                   <DropdownItem
                     title="Incognito Audit"
