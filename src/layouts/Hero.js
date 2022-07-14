@@ -22,7 +22,7 @@ function Hero() {
       <div className="container-wrapper">
         <div className={styles.hero}>
           <main>
-            <h2 className="fs-50px white weight-3 lh-1">
+            <h2 className={`fs-50px white weight-3 lh-1 ${styles.preTitle}`}>
               Audit <span className="red">Service</span> For
             </h2>
 
@@ -35,8 +35,8 @@ function Hero() {
                 autoplay: true,
                 interval: 3000,
                 type: "loop",
-                focus: isBellow1024px ? "center" : "left",
-                padding: { left: isBellow1024px ? 0 : "10%" },
+                focus: isBellow1024px ? "center" : "center",
+                // padding: { left: isBellow1024px ? 0 : "10%" },
               }}
               className={`${styles.splideSlider} splideSlider mb-15px`}
             >
