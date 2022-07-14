@@ -37,29 +37,45 @@ function Hero() {
                 }}
               >
                 <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">DApp.</h1>
+                  <h1 className="fs-150px white weight-8 lh-1">
+                    DApp<span className="red">.</span>
+                  </h1>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">DeFi.</h1>
+                  <h1 className="fs-150px white weight-8 lh-1">
+                    DeFi<span className="red">.</span>
+                  </h1>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">GameFi.</h1>
+                  <h1 className="fs-150px white weight-8 lh-1">
+                    GameFi<span className="red">.</span>
+                  </h1>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">P2E.</h1>
+                  <h1 className="fs-150px white weight-8 lh-1">
+                    P2E<span className="red">.</span>
+                  </h1>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">Contract.</h1>
+                  <h1 className="fs-150px white weight-8 lh-1">
+                    Contract<span className="red">.</span>
+                  </h1>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">Token.</h1>
+                  <h1 className="fs-150px white weight-8 lh-1">
+                    Token<span className="red">.</span>
+                  </h1>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">Coin.</h1>
+                  <h1 className="fs-150px white weight-8 lh-1">
+                    Coin<span className="red">.</span>
+                  </h1>
                 </SwiperSlide>
-                {/* <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">Blockchain.</h1>
-                </SwiperSlide> */}
+                <SwiperSlide>
+                  <h1 className="fs-150px white weight-8 lh-1">
+                    Blockchain<span className="red">.</span>
+                  </h1>
+                </SwiperSlide>
               </Swiper>
             </div>
 
