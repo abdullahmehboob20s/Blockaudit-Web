@@ -33,12 +33,12 @@ function Hero() {
                 autoWidth: true,
                 gap: 30,
                 autoplay: true,
-                interval: 1000,
+                interval: 3000,
                 type: "loop",
                 focus: isBellow1024px ? "center" : "left",
                 padding: { left: isBellow1024px ? 0 : "10%" },
               }}
-              className={`${styles.splideSlider} splideSlider`}
+              className={`${styles.splideSlider} splideSlider mb-15px`}
             >
               <SplideSlide>
                 <h1 className="fs-150px white weight-8 lh-1">
