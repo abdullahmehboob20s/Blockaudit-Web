@@ -26,12 +26,6 @@ function Hero() {
               Audit <span className="red">Service</span> For
             </h2>
 
-            {/* <h1
-              className={`fs-150px white weight-8 lh-1 ${styles.placeholderTitle}`}
-            >
-              DApp<span className="red">.</span>
-            </h1> */}
-
             <Splide
               options={{
                 arrows: false,
@@ -87,61 +81,6 @@ function Hero() {
                 </h1>
               </SplideSlide>
             </Splide>
-
-            {/* <div className={`${styles.swiper} mb-15px`}>
-              <Swiper
-                slidesPerView={"auto"}
-                spaceBetween={30}
-                modules={[Autoplay]}
-                loop={true}
-                className={`heroSwiper`}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-              >
-                <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">
-                    DApp<span className="red">.</span>
-                  </h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">
-                    DeFi<span className="red">.</span>
-                  </h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">
-                    GameFi<span className="red">.</span>
-                  </h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">
-                    P2E<span className="red">.</span>
-                  </h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">
-                    Contract<span className="red">.</span>
-                  </h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">
-                    Token<span className="red">.</span>
-                  </h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">
-                    Coin<span className="red">.</span>
-                  </h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">
-                    Blockchain<span className="red">.</span>
-                  </h1>
-                </SwiperSlide>
-              </Swiper>
-            </div> */}
 
             <p
               className="fs-24px white weight-2 lh-1_4 opacity-0_6 mb-30px"
