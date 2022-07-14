@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "scss/components/Toast.module.scss";
 import { IoClose } from "react-icons/io5";
 import useMediaQuery from "hooks/useMediaQuery";
 
 function Toast({ title, state, stateSetter, toastRef }) {
   const isBellow760px = useMediaQuery("(max-width : 47.5em)");
+
+  useEffect(() => {
+    if (state) {
+      stateSetter(true);
+
+      setTimeout(() => {
+        stateSetter(false);
+      }, 3000);
+    } else {
+      stateSetter(false);
+    }
+
+    return () => stateSetter(false);
+  }, [state]);
+
   return (
     <div
       className={`${styles.toast} ${state ? styles.active : ""}`}
@@ -14,9 +29,9 @@ function Toast({ title, state, stateSetter, toastRef }) {
         {title}
       </p>
 
-      <button onClick={() => stateSetter(false)}>
+      {/* <button onClick={() => stateSetter(false)}>
         <IoClose color="white" />
-      </button>
+      </button> */}
     </div>
   );
 }
