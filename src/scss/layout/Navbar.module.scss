@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 200;
   transition: all 0.2s ease;
 
   &.scrolled {
@@ -28,7 +28,7 @@
       display: flex;
       align-items: center;
       transition: all 0.3s ease;
-      z-index: 120;
+      z-index: 220;
 
       & > :not(:last-child) {
         margin-right: u.rem(50);
@@ -40,13 +40,36 @@
 
         .navLink {
           position: relative;
-          padding: 0 u.rem(20);
+          padding: 0.5rem u.rem(20) !important;
+
+          .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: black;
+            border: 2px solid #ff161628;
+            width: u.rem(200);
+            padding: u.rem(10) 0;
+            box-shadow: 0px 0px 30px rgb(0 0 0 / 25%);
+            transition: 0.3s;
+            border-radius: u.rem(4);
+            z-index: 400 !important;
+            transform: translateY(20%);
+            opacity: 0;
+            pointer-events: none;
+          }
+
+          &:hover .dropdown {
+            transform: translateY(0%);
+            opacity: 1;
+            pointer-events: visible;
+          }
         }
 
         .navLink.active::before {
           content: "";
           position: absolute;
-          top: 120%;
+          top: 100%;
           left: 0;
           width: 100%;
           height: u.rem(3);

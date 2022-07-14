@@ -4,6 +4,7 @@ import OutsideClickDetector from "hooks/OutsideClickDetector";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { IKImage } from "imagekitio-react";
+import DropdownItem from "components/DropdownItem";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,12 +61,20 @@ function Navbar() {
               >
                 Home
               </a>
-              <a
-                href="/"
+              <div
                 className={`${styles.navLink} fs-20px white weight-3 pointer`}
               >
-                Services
-              </a>
+                <span>Services</span>
+                <div className={styles.dropdown}>
+                  <DropdownItem title="Audit" icon="icons/automated.svg" />
+                  <DropdownItem
+                    title="Incognito Audit"
+                    icon="icons/solidity.svg"
+                  />
+                  <DropdownItem title="KYC" icon="icons/recommendation.svg" />
+                  <DropdownItem title="Escrow" icon="icons/reporting.svg" />
+                </div>
+              </div>
               <a
                 href="/"
                 className={`${styles.navLink} fs-20px white weight-3 pointer`}

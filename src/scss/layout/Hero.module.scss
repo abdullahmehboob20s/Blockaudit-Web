@@ -55,6 +55,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        max-width: u.rem(520);
+
+        @include u.breakpoint(twoxLarge) {
+          max-width: u.rem(420);
+        }
+
+        @include u.breakpoint(large) {
+          max-width: 100%;
+        }
 
         & > :not(:last-child) {
           margin-right: u.rem(30);

@@ -1,0 +1,16 @@
+.card {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(20, 20, 20);
+  }
+
+  .icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.8rem;
+  }
+}
