@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "scss/layout/Contact.module.scss";
 import { FaGithub, FaLinkedin, FaTelegram, FaTwitter } from "react-icons/fa";
 import useMediaQuery from "hooks/useMediaQuery";
 import { IKImage } from "imagekitio-react";
+import Toast from "components/Toast";
+import OutsideClickDetector from "hooks/OutsideClickDetector";
 
 function Contact() {
   const isBellow1024px = useMediaQuery("(max-width : 64em)");
+  const [showToast, setShowToast] = useState(false);
+  const toastRef = OutsideClickDetector(() => setShowToast(false));
+
+  const handler = (e) => {
+    e.preventDefault();
+    setShowToast(true);
+  };
+
   return (
     <div className={`${styles.wrapper} py-200px`}>
       <IKImage
@@ -14,6 +24,13 @@ function Contact() {
         path={"contact-buildings.png"}
         className={styles.contactBuildings}
         alt=""
+      />
+
+      <Toast
+        title="Your Response has been submited"
+        state={showToast}
+        stateSetter={setShowToast}
+        toastRef={toastRef}
       />
 
       <div className="container-wrapper">
@@ -27,7 +44,7 @@ function Contact() {
                 Let’s <span className="red">Talk!</span>
               </h1>
             </header>
-            <form>
+            <form onSubmit={handler}>
               <input
                 type="text"
                 className="fs-26px white weight-3"

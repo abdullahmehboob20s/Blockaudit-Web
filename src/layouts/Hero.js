@@ -1,6 +1,5 @@
 import IconCard from "components/IconCard";
 import styles from "scss/layout/Hero.module.scss";
-import useMediaQuery from "hooks/useMediaQuery";
 import { IKImage } from "imagekitio-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,8 +7,6 @@ import "swiper/css";
 import { Autoplay } from "swiper";
 
 function Hero() {
-  const isBellow1024px = useMediaQuery("(max-width : 64em)");
-
   return (
     <div className={styles.heroWrapper}>
       <IKImage
@@ -29,27 +26,40 @@ function Hero() {
 
             <div className={`${styles.swiper} mb-15px`}>
               <Swiper
-                slidesPerView={1}
+                slidesPerView={"auto"}
                 spaceBetween={30}
-                loop={true}
-                centeredSlides={isBellow1024px ? true : false}
-                autoplay={{
-                  delay: 1500,
-                  disableOnInteraction: false,
-                  waitForTransition: true,
-                }}
-                className={`heroSwiper`}
                 modules={[Autoplay]}
+                loop={true}
+                className={`heroSwiper`}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
               >
+                <SwiperSlide>
+                  <h1 className="fs-150px white weight-8 lh-1">DApp.</h1>
+                </SwiperSlide>
                 <SwiperSlide>
                   <h1 className="fs-150px white weight-8 lh-1">DeFi.</h1>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <h1 className="fs-150px white weight-8 lh-1">Dapps.</h1>
+                  <h1 className="fs-150px white weight-8 lh-1">GameFi.</h1>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <h1 className="fs-150px white weight-8 lh-1">P2E.</h1>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <h1 className="fs-150px white weight-8 lh-1">Contract.</h1>
                 </SwiperSlide>
                 <SwiperSlide>
                   <h1 className="fs-150px white weight-8 lh-1">Token.</h1>
                 </SwiperSlide>
+                <SwiperSlide>
+                  <h1 className="fs-150px white weight-8 lh-1">Coin.</h1>
+                </SwiperSlide>
+                {/* <SwiperSlide>
+                  <h1 className="fs-150px white weight-8 lh-1">Blockchain.</h1>
+                </SwiperSlide> */}
               </Swiper>
             </div>
 

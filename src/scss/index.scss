@@ -1,12 +1,5 @@
 @forward "globals";
 
 .heroSwiper {
-  .swiper-slide {
-    opacity: 0.2;
-    transition: all 0.3s ease;
-
-    &.swiper-slide-active {
-      opacity: 1;
-    }
-  }
+  width: 100%;
 }
